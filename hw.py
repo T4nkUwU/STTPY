@@ -35,7 +35,3 @@ gameLoop = True
 while(gameLoop == True):
     g = input("Input an action! \n")
     redMeeple.actionFunction(g)
- #       if action == ("Move Right"): 
- #           print("Character Moves Right")
- #           redMeeple.location += 1
- #           redMeeple.myLocation()
