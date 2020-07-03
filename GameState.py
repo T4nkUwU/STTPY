@@ -33,16 +33,15 @@ class meeple:
         elif action.lower() == 'move up' and self.yLocation == self.board.yMax:
             return print("Illegal manuever: Cannot move above top bounds")
 
-
 class board:
     def __init__(self, xMax, yMax):
         self.xMax = xMax
         self.yMax = yMax
 
 
-
 newBoard = board(7,1)
 redMeeple = meeple(3,1, newBoard)
+
 gameLoop = True
 
 while(gameLoop == True):
