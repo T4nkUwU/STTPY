@@ -6,7 +6,7 @@ Space Time Tavern is a 1v1 Simultaneous Turn Based Fighting Game.
 
 ## Next Objective
 
+- Inputs class
 - Object detection
-- Error detection, then re-input
 - Input tracking and saving
-- Y axis 
+
