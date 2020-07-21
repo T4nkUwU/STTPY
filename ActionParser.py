@@ -41,7 +41,10 @@ class ActionParser:
             for Action in self.ActionsList:
                 if Action.abreviation == input:
                     return Action.runAction()
-        
+        elif len(str(input)) > 3:
+            for Action in self.ActionsList:
+                    if Action.actionName == input:
+                        return Action.runAction()
 
 soldier = Action("Soulja boy", "soj", "Up in dat ho")
 Announce = Action("Announce", "anc", "Announce your presence to the world!")
