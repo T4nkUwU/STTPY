@@ -1,4 +1,6 @@
 from random import *
+import math
+from os import system, name
 
 class meeple:
     def __init__(self, name, xStart, yStart):
@@ -65,18 +67,19 @@ class inputReader:
             return print("Illegal manuever: Cannot move above top bounds")
 
     def resetVictory(self):
+        system('cls')
         self.winningX = randrange(1,self.theBoard.xMax)
         self.winningY = randrange(1,self.theBoard.yMax)
-        self.theMeeple.yLocation = 2
-        self.theMeeple.xLocation = 2
+        self.theMeeple.yLocation = int(math.ceil(self.theBoard.yMax/2))
+        self.theMeeple.xLocation = int(math.ceil(self.theBoard.yMax/2))
         return
 
 class gameState:
     def __init__(self):
         self.gameLoop = True
         self.curPlayer = player(input("Tell me your name! \n"))
-        self.curBoard = board(3,3)
-        self.curMeeple = meeple(str(self.curPlayer.name),2,2)
+        self.curBoard = board(7,7)
+        self.curMeeple = meeple(str(self.curPlayer.name),int(math.ceil(self.curBoard.xMax/2)),int(math.ceil(self.curBoard.yMax/2)))
         self.curReader = inputReader(self.curPlayer, self.curMeeple, self.curBoard, self)
         self.runGame()
     
