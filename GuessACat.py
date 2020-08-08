@@ -1,15 +1,61 @@
-from random import *
-import math
+#from random import *
+#import math
 from os import system, name
 
 class gameState:
-     def __init__(self):
-        print("Welcome to game state! This is the prototype of the STT system.\n\n")
-        building = True
-        while building == True:
-            self.numberOfPlayers = input("How many players are playing?:\n")
-            if isinstance(self.numberOfPlayers, int)
+    def __init__(self):
+        print("placeholder!")
+
+class player:
+    def __init__(self, name):
+        self.name = str(name)
             
+class board:
+    def __init__(self, xMax, yMax):
+        self.xMax = int(xMax)
+        self.yMax = int(yMax)
+
+class action:
+    def __init__(self, name, description):
+        self.actionName = str(name).capitalize()
+        self.description = str(description).capitalize()
+
+class ActionParser:
+    def __init__(self, *Actions):
+        self.ActionsList = []
+        self.alphabet = ''
+        for action in Actions:
+            self.ActionsList.append(action)
+            self.alphabet += str(action.actionName)[0]
+        ##self.ActionTable = []
+        ##for i in self.ActionsList:
+        ##    if 
+        
+    def CommandList(self):
+        print("\n\n=== LIST OF USEABLE COMMANDS===")
+        for Action in self.ActionsList:
+            Action.helpMe()
+        print("=== END OF LIST ==\n")
+
+    def getInput(self, input):
+        if input == "help":
+            return self.CommandList()
+        # if len(str(input)) == 3:
+        #     for Action in self.ActionsList:
+        #         if Action.abreviation == input:
+        #             return Action.runAction()
+        elif len(str(input)) > 3:
+            for Action in self.ActionsList:
+                    if Action.actionName == input:
+                        return Action.runAction()
+
+class inputRunner:
+    def __init__(self):
+        print("placeholder!")
+
+class victoryCondition:
+    def __init__(self):
+        print("placeholder!")
 
 # class meeple:
 #     def __init__(self, name, xStart, yStart):
